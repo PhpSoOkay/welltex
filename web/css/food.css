@@ -15,13 +15,16 @@
 }
 
 .menu_food_item:hover > div {
-    height: 75px;
+    height: 120px;
 }
 
 .add_to_cart {
-    margin-bottom: 5px;
     transition: .3s;
     color: white;
+}
+
+.add_to_cart_wrap {
+    margin-bottom: 20px;
 }
 
 

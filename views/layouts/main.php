@@ -40,6 +40,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'Меню', 'url' => ['/food/index']],
+            !Yii::$app->user->isGuest ? ['label' => 'Мои Заказы', 'url' => ['/food/orders']] : '',
             Yii::$app->user->isGuest
                 ? ['label' => 'Войти', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
