@@ -1,0 +1,31 @@
+.menu_food_item {
+    aspect-ratio: 1/1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.menu_food_item > div {
+    background-color: rgba(0, 0, 0, 0.55);
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    transition: .3s;
+    height: 35px;
+    overflow: hidden;
+}
+
+.menu_food_item:hover > div {
+    height: 75px;
+}
+
+.add_to_cart {
+    margin-bottom: 5px;
+    transition: .3s;
+    color: white;
+}
+
+
+.add_to_cart:hover {
+    cursor: pointer;
+    color: #2fae07;
+}

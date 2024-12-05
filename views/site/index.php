@@ -5,49 +5,30 @@
 $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
-
-    <div class="jumbotron text-center bg-transparent mt-5 mb-5">
-        <h1 class="display-4">Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
     <div class="body-content">
-
+        <div class="text-center h2">Реализация тестового задания "Электронная система приема заказов"</div>
         <div class="row">
-            <div class="col-lg-4 mb-3">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
+            <ul>
+                <li>Есть меню, из которого можно составить заказ (можно записать фикстуры заранее и сохранить БД, получение данных только через ActiveRecord)</li>
+                <li>авторизация (заказ может сделать авторизованный пользователь)</li>
+                <li>добавление новых заказов (пользователь может создавать новые заказы помимо существующих)</li>
+                <li>количество единиц заказа (пользователь может указывать количество блюд в заказе)</li>
+                <li>личный кабинет пользователя с созданными им заказами</li>
+                <li>возможность удаления заказов</li>
+            </ul>
         </div>
-
+        <div class="row">
+            <div class="text-center h3">Реализовать ТЗ необходимо в среде yii2 basic фреймворка</div>
+            <div class="h5">Потребуется реализация кейсов:</div>
+            <ul>
+                <li>CRUD для ActiveRecord модели yii2, формы</li>
+                <li>валидация модели в yii2</li>
+                <li>JS скрипты -для динамического добавления/удаления полей в форме (сводобная реализация, можно использовать jquery, vue или другие библиотеки</li>
+                <li>Работа с авторизацией/регистрацией в Yii2</li>
+                <li>Желательно реализовать кейс регистрации пользователя в самом простом виде</li>
+                <li>никакого стилевого оформления не нужно, достаточно базового бутстрапа.</li>
+                <li>будем оценивать использование инструментов yii2 для решения задачи, оформление кода и логику</li>
+            </ul>
+        </div>
     </div>
 </div>
