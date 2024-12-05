@@ -2,7 +2,7 @@
 
 namespace tests\unit\fixtures;
 
-use app\models\activeRecords\Food;
+use app\models\Food;
 use yii\test\ActiveFixture;
 
 class FoodFixture extends ActiveFixture
