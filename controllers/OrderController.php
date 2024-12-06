@@ -65,7 +65,7 @@ class OrderController extends Controller
         }
         $order->delete();
 
-        return $this->redirect(Url::to(['order / orders']));
+        return $this->redirect(Url::to(['order/orders']));
     }
 
     public function actionAdd()
