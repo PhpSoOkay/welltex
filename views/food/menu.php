@@ -12,14 +12,7 @@ use yii\helpers\Url;
 
 $this->title                   = 'Меню';
 $this->params['breadcrumbs'][] = $this->title;
-
-$this->registerJsFile(
-    '@web/js/cart.js',
-    ['depends' => [\yii\web\JqueryAsset::class]]
-);
 ?>
-
-
     <div class="row">
         <?php
         foreach ($foodData as $food): ?>
@@ -40,7 +33,20 @@ $this->registerJsFile(
                                           x-on:click="selectedCount--">-</span>
                                     <span x-text="selectedCount">-</span>
                                     <span class="add_to_cart" x-on:click="selectedCount++">+</span>
-                                    <div class="add_to_cart"  x-on:click="addToCart(<?= $food->id; ?>, selectedCount); isStartSelect = false">Добавить</div>
+                                    <div class="add_to_cart"
+                                         x-on:click="
+                                         let cartFood = cart.find((food) => food.food_id === <?= $food->id; ?>);
+                                         if (!cartFood) {
+                                            cart.push({food_id: <?= $food->id; ?>, title: '<?= $food->title; ?>', image:'<?= $food->thumbnail; ?>', selected_count: selectedCount});
+                                         } else {
+                                            cartFood.selected_count += selectedCount;
+                                         }
+                                         updateCart(cart);
+                                         isStartSelect = false; selectedCount = 1;
+"
+                                    >
+                                        Добавить
+                                    </div>
                                 </div>
                             </div>
                         <?php
