@@ -13,10 +13,8 @@ class m241205_192435_create_order_table extends Migration
     public function safeUp()
     {
         $this->createTable('order', [
-            'id'         => $this->primaryKey(),
-            'user_id'    => $this->integer()->null(),
-            'food_id'    => $this->integer()->null(),
-            'food_count' => $this->integer()->defaultValue(1),
+            'id'      => $this->primaryKey(),
+            'user_id' => $this->integer()->null(),
         ]);
 
         $this->addForeignKey(
@@ -28,9 +26,25 @@ class m241205_192435_create_order_table extends Migration
             'CASCADE'
         );
 
+        $this->createTable('order_data', [
+            'id'         => $this->primaryKey(),
+            'order_id'   => $this->integer()->notNull(),
+            'food_id'    => $this->integer()->null(),
+            'food_count' => $this->integer()->defaultValue(1),
+        ]);
+
         $this->addForeignKey(
-            'fk-order-food_id',
+            'fk-order_data-order_id',
+            'order_data',
+            'order_id',
             'order',
+            'id',
+            'CASCADE'
+        );
+
+        $this->addForeignKey(
+            'fk-order_data-food_id',
+            'order_data',
             'food_id',
             'food',
             'id',
@@ -43,12 +57,20 @@ class m241205_192435_create_order_table extends Migration
      */
     public function safeDown()
     {
+
         $this->dropForeignKey(
-            'fk-order-user_id',
-            'order'
+            'fk-order_data-order_id',
+            'order_data'
         );
         $this->dropForeignKey(
-            'fk-order-food_id',
+            'fk-order_data-food_id',
+            'order_data'
+        );
+        $this->dropTable('order_data');
+
+
+        $this->dropForeignKey(
+            'fk-order-user_id',
             'order'
         );
         $this->dropTable('order');

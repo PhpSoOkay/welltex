@@ -32,3 +32,8 @@
     cursor: pointer;
     color: #2fae07;
 }
+#cart{
+    position: absolute;
+    top: 50px;
+    right: 0px;
+}
